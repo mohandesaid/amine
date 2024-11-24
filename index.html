@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V - Your Video Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Navbar -->
+        <header class="navbar">
+            <div class="logo">V</div>
+            <input type="text" class="search-bar" placeholder="Search...">
+            <div class="theme-toggle" onclick="toggleTheme()">🌞</div>
+            <button onclick="showChannelForm()">Create Channel</button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content">
+            <aside class="sidebar">
+                <ul>
+                    <li>Home</li>
+                    <li>Trending</li>
+                    <li>Subscriptions</li>
+                    <li>Library</li>
+                </ul>
+            </aside>
+
+            <section class="video-grid" id="video-grid">
+                <!-- Video cards will be dynamically added here -->
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 V. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Modal for Creating a Channel -->
+    <div class="modal" id="channel-modal">
+        <h2>Create a Channel</h2>
+        <input type="text" id="channel-name" placeholder="Channel Name">
+        <textarea id="video-description" placeholder="Video Description"></textarea>
+        <input type="url" id="video-url" placeholder="Video URL (e.g., YouTube or MP4 link)">
+        <button onclick="addVideo()">Add Video</button>
+        <button onclick="closeChannelForm()">Cancel</button>
+    </div>
+
+    <!-- Modal for Full-Screen Video Playback -->
+    <div class="fullscreen-modal" id="fullscreen-modal">
+        <div class="fullscreen-content" id="fullscreen-content"></div>
+        <button class="close-fullscreen" onclick="closeFullscreen()">X</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
